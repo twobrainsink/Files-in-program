@@ -36,7 +36,8 @@ class Share:
             if cmd == "send":
                 path = input("Enter the file name: ")
                 if "/" in path:
-                    name = path.split("/")[-1]
+                    s = path.split("/")[-1].split(".")
+                    name = s[0] + f"(by {getpass.getuser()})" + "." + s[1]
                 else:
                     s = path.split(".")
                     name = s[0] + f"(by {getpass.getuser()})" + "." + s[1]
